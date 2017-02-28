@@ -1,0 +1,28 @@
+{
+  "name": "Student",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "courses": {
+      "type": "hasMany",
+      "model": "Course",
+      "foreignKey": "studentId",
+      "through": "Studcours"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
